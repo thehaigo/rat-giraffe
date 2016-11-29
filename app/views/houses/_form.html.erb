@@ -22,11 +22,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
     <%= f.label :age %>
     <%= f.number_field :age %>
   </div>
@@ -36,7 +31,29 @@
     <%= f.text_area :remaks %>
   </div>
 
+  <hr>
+
+  <%= f.fields_for :nearest_stations do |station|%>
+
+    <div class="field">
+      <%= station.label :route_name %>
+      <%= station.text_field :route_name %>
+    </div>
+
+    <div class="field">
+      <%= station.label :station_name %>
+      <%= station.text_field :station_name %>
+    </div>
+
+    <div class="field">
+      <%= station.label :minute_walk %>
+      <%= station.text_field :minute_walk %>
+    </div>
+
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
