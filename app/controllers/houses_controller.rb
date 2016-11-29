@@ -29,7 +29,7 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.save
-        format.html { redirect_to @house, notice: 'House was successfully created.' }
+        format.html { redirect_to @house, notice: '物件を登録しました' }
         format.json { render :show, status: :created, location: @house }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class HousesController < ApplicationController
   def update
     respond_to do |format|
       if @house.update(house_params)
-        format.html { redirect_to @house, notice: 'House was successfully updated.' }
+        format.html { redirect_to @house, notice: '物件を更新しました' }
         format.json { render :show, status: :ok, location: @house }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class HousesController < ApplicationController
   def destroy
     @house.destroy
     respond_to do |format|
-      format.html { redirect_to houses_url, notice: 'House was successfully destroyed.' }
+      format.html { redirect_to houses_url, notice: '物件を削除しました' }
       format.json { head :no_content }
     end
   end
