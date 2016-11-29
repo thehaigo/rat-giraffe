@@ -12,34 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label "物件名" %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :hire %>
-    <%= f.number_field :hire %>
+    <%= f.label "賃料" %>
+    <%= f.number_field :hire %>円
   </div>
 
   <div class="field">
-    <%= f.label :address %>
+    <%= f.label "住所" %>
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.label "築年数" %>
+    <%= f.number_field :age %>年
   </div>
 
   <div class="field">
-    <%= f.label :remaks %>
+    <%= f.label "備考" %>
     <%= f.text_area :remaks %>
   </div>
 
   <hr>
-
+  <% i = 1%>
   <%= f.fields_for :nearest_stations do |station|%>
-
+    <h4>最寄り駅<%= i %></h4>
     <div class="field">
       <%= station.label :route_name %>
       <%= station.text_field :route_name %>
@@ -52,13 +52,13 @@
 
     <div class="field">
       <%= station.label :minute_walk %>
-      <%= station.text_field :minute_walk %>
+      <%= station.text_field :minute_walk %>分
     </div>
-
+    <% i+=1%>
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit submit %>
   </div>
 
 <% end %>
